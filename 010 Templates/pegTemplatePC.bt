@@ -1,0 +1,56 @@
+//------------------------------------------------
+//--- 010 Editor Binary Template
+//
+//      File: Saints Row Peg_PC
+//   Authors: UndeadFrankie
+//   Version: 0.01
+//   Purpose: Reverse PEG / G_PEG files
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local int i = 0;
+local int y = 0;
+
+struct pegHeader
+{
+char magic[4] <name="magicNum">;
+short version  <name="version">;
+short subVersion;
+int fileSize;
+int dataFileSize;
+short entryCount;
+short unknown12;
+short frameCount;
+short unknown16;
+
+while(i<frameCount) //loop through until (i) is greater than then numbers of files 
+{
+struct frame 
+{
+	int offset; 
+    short width;
+    short height;
+    short format;
+    short unknown1;
+    int unknown2;
+    short frames;
+    int unknown3;
+    int unknown4;
+    byte unknownFlags;
+    byte mipmapCount;
+    int size;
+    int unknown3;
+    int unknown4;
+    int unknown5;
+    int unknown6;
+};
+i++;
+};
+
+frame filesArray[frameCount];
+};
+
+pegHeader pegFile;
